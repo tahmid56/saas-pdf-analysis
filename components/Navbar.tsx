@@ -10,7 +10,7 @@ const Navbar = () => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     }
-    const closeMenu =() =>{
+    const closeMenu = () => {
         setIsOpen(false);
     }
     return (
@@ -21,35 +21,36 @@ const Navbar = () => {
                         SaaS PDF Analysis
                     </Link>
 
-                    <div className="hidden md:flex items-center space-x-4">
+                    <div className="hidden md:flex items-center space-x-4 ml-6">
                         <Link href="/dashboard" className="text-white/70 hover:text-white px-4 py-2 transition-all duration-300 hover:shadow-[0_2px_8px_0] hover:shadow-purple-400/40 hover:rounded-md">
                             Dashboard
                         </Link>
                         <Link href="/pricing" className="text-white/70 hover:text-white px-4 py-2 transition-all duration-300 hover:shadow-[0_2px_8px_0] hover:shadow-purple-400/40 hover:rounded-md">
                             Pricing
                         </Link>
-                    </div>
-                    <SignedIn>
-                        <SignOutButton>
-                            <button className="text-white/70 hover:text-white px-4 py-2 transition-all duration-300 hover:shadow-[0_2px_8px_0] hover:shadow-purple-400/40 hover:rounded-md">
-                                Signout
-                            </button>
-                        </SignOutButton>
-                    </SignedIn>
+                        <SignedIn>
+                            <SignOutButton>
+                                <button className="text-white/70 hover:text-white px-4 py-2 transition-all duration-300 hover:shadow-[0_2px_8px_0] hover:shadow-purple-400/40 hover:rounded-md">
+                                    Signout
+                                </button>
+                            </SignOutButton>
+                        </SignedIn>
 
-                    <SignedOut>
-                        <div className="flex items-center">
-                            <Link href="/sign-in" className="group relative inline-flex items-center gap-2 rounded-full bg-black px-4 py-2 text-white transition-all hover:bg-white/5">
-                                <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#FF1E56] via-[#FF00FF] to-[#00FFFF] opacity-70 blur-sm transition-all group-hover:opacity-100"></span>
-                                <span className="absolute inset-0.5"></span>
-                                <span className="relative font-medium">Sign In</span>
-                            </Link>
-                        </div>
-                    </SignedOut>
+                        <SignedOut>
+                            <div className="flex items-center">
+                                <Link href="/sign-in" className="group relative inline-flex items-center gap-2 rounded-full bg-black px-4 py-2 text-white transition-all hover:bg-white/5">
+                                    <span className="absolute inset-0 rounded-full bg-gradient-to-r from-[#FF1E56] via-[#FF00FF] to-[#00FFFF] opacity-70 blur-sm transition-all group-hover:opacity-100"></span>
+                                    <span className="absolute inset-0.5"></span>
+                                    <span className="relative font-medium">Sign In</span>
+                                </Link>
+                            </div>
+                        </SignedOut>
+                    </div>
+
                     {/* Toggle Mobile menu */}
-                    <div className="md:hidden z-50">
-                        <button  onClick={toggleMenu} className="p-2">
-                            {isOpen ? (<X className="h-6 w-6 text-white"/>): (<Menu className="h-6 w-6 text-white"/>)}
+                    <div className="md:hidden fixed z-50">
+                        <button onClick={toggleMenu} className="p-2">
+                            {isOpen ? (<X className="h-6 w-6 text-white" />) : (<Menu className="h-6 w-6 text-white" />)}
                         </button>
                     </div>
                     {/* Mobile menu */}
